@@ -7,14 +7,15 @@ function init() {
     calculateBtn.onclick = calculateBtnOnClick;
 }
 function calculateBtnOnClick() {
-    const numberOfDaysField = document.getElementById("numberOfDaysField");
+    const numberOfDaysField = Number(document.getElementById("numberOfDaysField").value);
+    
     let extraPerDay = 0;
-    let total = 0;
-
-    let gps = document.getElementById("gps").checked;
-    let tollTag = document.getElementById("tollTag").checked;
-    let roadSide = document.getElementById("roadside").checked;
-    let yes = document.getElementById("yes").checked;
+    let subTotal = numberOfDaysField * 29.99;
+    
+    const gps = document.getElementById("gps").checked;
+    const tollTag = document.getElementById("tollTag").checked;
+    const roadSide = document.getElementById("roadSide").checked;
+    const yes = document.getElementById("yes").checked;
    
     
    
@@ -29,14 +30,16 @@ function calculateBtnOnClick() {
     if (roadSide) {
         extraPerDay += 2.95 * numberOfDaysField;
     }
-    let subTotal = numberOfDaysField * 29.99 + extraPerDay;
+   
+    let total = subTotal + extraPerDay;
     
    
     if (yes) {
         total += subTotal * 0.3;
     }
+    
     const rentalPrice = document.getElementById("rentalPrice");
-    rentalPrice.value = numberOfDaysField * 29.99;
+    rentalPrice.value = Math.round(total*100)/100;
    
 
 
