@@ -11,35 +11,43 @@
     <title>ACME Car Rental</title>
 </head>
 
-<body>
+<body class="container-fluid border border-primary" style="width: 30rem;">
     <h1>ACME Car Rental</h1>
-    <div>
+    <div class="row p-2">
         <p>Pickup date: <input id="pickUpField" type="date" /></p>
         <p>Number of days: <input id="numberOfDaysField" type="text" /></p>
     </div>
-    <div>
-        <h4>Options:</h4>
-        <input type="checkbox" id="tollTag" value="tollTag">
-        <label for="tollTag">Electronic Toll Tag ($3.95/day)</label><br>
-        <input type="checkbox" id="gps" value="gps">
-        <label for="gps">GPS ($2.95/day)</label><br>
-        <input type="checkbox" id="roadSide" value="roadSide">
-        <label for="roadSide">Roadside Assistance ($2.95/day)</label><br>
+    <div class="row p-2">
+        <fieldset>
+            <legend>Options:</legend>
+            <input type="checkbox" id="tollTag" value="tollTag">
+            <label for="tollTag">Electronic Toll Tag ($3.95/day)</label><br>
+            <input type="checkbox" id="gps" value="gps">
+            <label for="gps">GPS ($2.95/day)</label><br>
+            <input type="checkbox" id="roadSide" value="roadSide">
+            <label for="roadSide">Roadside Assistance ($2.95/day)</label><br>
+        </fieldset>
     </div>
-    <div>
-        <h4>Under 25?</h4>
-        <input type="radio" name="yesOrNo" id="no" value="no">No
-        <input type="radio" name="yesOrNo" id="yes" value="yes">Yes
+    <div class="row p-2">
+        <fieldset>
+            <legend>Under 25?</legend>
+            <input type="radio" name="yesOrNo" id="no" value="no">No
+            <input type="radio" name="yesOrNo" id="yes" value="yes">Yes
+        </fieldset>
     </div>
-    <div>
+    <div class="row p-2">
         <input type="button" id="calculateBtn" value="Estimate Total Cost">
     </div>
-    <div>
-        <p>Car Rental:<input id="rentalPrice" type="text" /></p>
-        <p>Options: <input id="options" type="text" /></p>
-        <p>Under 25 surcharge:<input id="ageSurcharge" type="text" /></p><br>
-        <p>Total due: <input id="total" type="text" /></p>
+    <div class="row p-2">
+        <fieldset>
+            <p>Car Rental: <label id="rentalPrice"></label></p>
+            <p>Options: <label id="options"></label> </p>
+            <p>Under 25 surcharge: <label id="ageSurcharge"></label></p>
+            <p>Total due: <label id="total"></label></p>
+
+        </fieldset>
     </div>
+
 
 
 
